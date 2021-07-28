@@ -4,9 +4,9 @@ import "./App.css";
 import Header from "./components/Header/Header";
 import SimpleBottomNavigation from "./components/MainNav";
 import Trending from "./Pages/Trending/Trending";
-import Movies from "./Pages/Movies";
-import Series from "./Pages/Series";
-import Search from "./Pages/Search";
+import Movies from "./Pages/Movies/Movies";
+import Series from "./Pages/Series/Series";
+import Search from "./Pages/Search/Search";
 
 function App() {
   return (
