@@ -12,6 +12,7 @@ import {
 } from "../../config/config";
 import { Button } from "@material-ui/core";
 import YouTubeIcon from "@material-ui/icons/YouTube";
+import "./ContentModal.css";
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -66,10 +67,10 @@ export default function ContentModal({ children, media_type, id }) {
   }, []);
 
   return (
-    <div>
-      <button type="button" className="media" onClick={handleOpen}>
+    <>
+      <div type="button" className="media" onClick={handleOpen}>
         {children}
-      </button>
+      </div>
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
@@ -86,15 +87,15 @@ export default function ContentModal({ children, media_type, id }) {
           {content && (
             <div className={classes.paper}>
               <div className="ContentModal">
-                {/* <img
+                <img
                   alt={content.name || content.title}
-                  className="Content_portrait"
+                  className="ContentModal_portrait"
                   src={
                     content.poster_path
                       ? `${img_500}/${content.poster_path}`
                       : unavailable
                   }
-                /> */}
+                />
                 <img
                   alt={content.name || content.title}
                   className="ContentModal_landscape"
@@ -136,6 +137,6 @@ export default function ContentModal({ children, media_type, id }) {
           )}
         </Fade>
       </Modal>
-    </div>
+    </>
   );
 }
