@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
 .ContentModal_landscape {
     object-fit: contain;
     border-radius: 10px;
@@ -42,7 +42,7 @@
 
 .ContentModal_title {
     height: 12%;
-    font-size: 5vw;
+    font-size: 4vw;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -69,20 +69,20 @@
     }
     .ContentModal_portrait {
         display: flex;
-        width: 35%;
+        width: 38%;
     }
     .ContentModal {
         flex-direction: row;
         justify-content: space-around;
-        padding: 0;
+        padding: 10px 0;
     }
     .ContentModal_about {
-        width: 50%;
+        width: 58%;
         padding: 0;
         height: 100%;
     }
     .ContentModal_title {
-        font-size: 3vw;
+        font-size: 3.5vw;
     }
     .ContentModal_description {
         font-size: 22px;
