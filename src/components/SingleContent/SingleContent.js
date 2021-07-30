@@ -40,7 +40,7 @@ const SingleContent = ({
         </span>
         {/* <span>{date}</span> */}
         <span>
-          <FormattedDate value={date}></FormattedDate>
+          <FormattedDate year="numeric" value={date}></FormattedDate>
         </span>
       </div>
     </ContentModal>
