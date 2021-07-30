@@ -2,13 +2,9 @@
     scroll-behavior: smooth;
 }
 
-:root {
-    --main-color: #39445a;
-}
-
 .App {
     min-height: 100vh;
-    background-color: var(--main-color);
+    background-color: var(--azul-claro);
     color: white;
     padding-top: 130px;
     padding-bottom: 70px;
@@ -24,9 +20,9 @@
     text-transform: uppercase;
     display: flex;
     justify-content: center;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 2vw;
-    padding: 4px;
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: 3vw;
+    padding: 10px;
     border-radius: 50px;
     color: #fff;
 }

@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     width: "90%",
     height: "80%",
-    backgroundColor: "#39445a",
+    backgroundColor: "var(--azul-oscuro)",
     border: "1px solid #282c34",
     borderRadius: 10,
     color: "white",
@@ -135,6 +135,7 @@ export default function TransitionsModal({ children, media_type, id }) {
                   </div>
 
                   <Button
+                    style={{ backgroundColor: "var(--naranja)" }}
                     variant="contained"
                     startIcon={<YouTubeIcon />}
                     color="secondary"

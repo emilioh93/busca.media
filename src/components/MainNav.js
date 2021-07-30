@@ -7,14 +7,14 @@ import WhatshotIcon from "@material-ui/icons/Whatshot";
 import MovieIcon from "@material-ui/icons/Movie";
 import TvIcon from "@material-ui/icons/Tv";
 import SearchIcon from "@material-ui/icons/Search";
-import PlaylistAddCheckIcon from '@material-ui/icons/PlaylistAddCheck';
+// import PlaylistAddCheckIcon from "@material-ui/icons/PlaylistAddCheck";
 
 const useStyles = makeStyles({
   root: {
     width: "100%",
     position: "fixed",
     bottom: 0,
-    backgroundColor: "#2d313a",
+    backgroundColor: "var(--azul-oscuro)",
     zIndex: 100,
   },
 });
@@ -41,7 +41,6 @@ export default function SimpleBottomNavigation() {
       showLabels
       className={classes.root}
     >
-      
       <BottomNavigationAction
         style={{ color: "white" }}
         label="Movies"
@@ -62,11 +61,12 @@ export default function SimpleBottomNavigation() {
         label="Search"
         icon={<SearchIcon />}
       />
-      <BottomNavigationAction
+      {/* TODO: habilitar botón my list */}
+      {/* <BottomNavigationAction
         style={{ color: "white" }}
         label="MyList"
         icon={<PlaylistAddCheckIcon />}
-      />
+      /> */}
     </BottomNavigation>
   );
 }

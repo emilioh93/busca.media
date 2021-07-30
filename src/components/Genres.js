@@ -40,12 +40,21 @@ const Genres = ({
   }, []);
 
   return (
-    <div style={{ padding: "6px 0" }}>
+    <div
+      style={{
+        padding: "15px 0",
+        display: "flex",
+        justifyContent: "start",
+        textAlign: "start",
+        flexWrap: "wrap",
+        fontWeight: "bold",
+      }}
+    >
       {selectedGenres &&
         selectedGenres.map((genre) => (
           <Chip
             label={genre.name}
-            style={{ margin: 2 }}
+            style={{ margin: 2, backgroundColor: "var(--naranja)" }}
             size="small"
             color="primary"
             key={genre.id}

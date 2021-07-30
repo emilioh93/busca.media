@@ -4,8 +4,9 @@
     position: fixed;
     display: flex;
     justify-content: center;
+    text-align: center;
     text-transform: uppercase;
-    background-color: #39445a;
+    background-color: var(--azul-medio);
     font-family: "Montserrat", sans-serif;
     font-size: 5vw;
     padding-bottom: 15px;
