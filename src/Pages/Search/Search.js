@@ -49,7 +49,7 @@ const Search = () => {
             label={
               <FormattedMessage
                 id="app.search"
-                defaultMessage="Buscar"
+                defaultMessage="Search"
               ></FormattedMessage>
             }
             variant="filled"

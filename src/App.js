@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import { Container } from "@material-ui/core";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import "./App.css";
@@ -10,26 +11,29 @@ import Search from "./Pages/Search/Search";
 import MyList from "./Pages/MyList/MyList";
 import { IntlProvider } from "react-intl";
 import Spanish from "./lang/es-ES.json";
+import English from "./lang/en-US.json";
+import { langContext } from "./context/langContext";
 
 function App() {
+  const idioma = useContext(langContext);
+  console.log({ idioma });
+
   return (
-    <IntlProvider locale="es-ES" messages={Spanish}>
-      <BrowserRouter>
-        <Header></Header>
-        <div className="App">
-          <Container>
-            <Switch>
-              <Route component={Trending} exact path="/"></Route>
-              <Route component={Movies} path="/movies"></Route>
-              <Route component={Series} path="/series"></Route>
-              <Route component={Search} path="/search"></Route>
-              <Route component={MyList} path="/mylist"></Route>
-            </Switch>
-          </Container>
-        </div>
-        <SimpleBottomNavigation></SimpleBottomNavigation>
-      </BrowserRouter>
-    </IntlProvider>
+    <BrowserRouter>
+      <Header></Header>
+      <div className="App">
+        <Container>
+          <Switch>
+            <Route component={Trending} exact path="/"></Route>
+            <Route component={Movies} path="/movies"></Route>
+            <Route component={Series} path="/series"></Route>
+            <Route component={Search} path="/search"></Route>
+            <Route component={MyList} path="/mylist"></Route>
+          </Switch>
+        </Container>
+      </div>
+      <SimpleBottomNavigation></SimpleBottomNavigation>
+    </BrowserRouter>
   );
 }
 

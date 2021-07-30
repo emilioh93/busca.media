@@ -32,7 +32,7 @@ const Movies = () => {
       <span className="pageTitle">
         <FormattedMessage
           id="app.movies"
-          defaultMessage="Películas"
+          defaultMessage="Movies"
         ></FormattedMessage>
       </span>
       <Genres

@@ -27,7 +27,7 @@ const Trending = () => {
         {
           <FormattedMessage
             id="app.trending"
-            defaultMessage="Tendencias"
+            defaultMessage="Trending"
           ></FormattedMessage>
         }
       </span>

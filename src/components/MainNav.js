@@ -47,7 +47,7 @@ export default function SimpleBottomNavigation() {
         label={
           <FormattedMessage
             id="app.trending"
-            defaultMessage="Tendencias"
+            defaultMessage="Trending"
           ></FormattedMessage>
         }
         icon={<WhatshotIcon />}
@@ -57,7 +57,7 @@ export default function SimpleBottomNavigation() {
         label={
           <FormattedMessage
             id="app.movies"
-            defaultMessage="Películas"
+            defaultMessage="Movies"
           ></FormattedMessage>
         }
         icon={<MovieIcon />}
@@ -72,7 +72,7 @@ export default function SimpleBottomNavigation() {
         label={
           <FormattedMessage
             id="app.search"
-            defaultMessage="Buscar"
+            defaultMessage="Search"
           ></FormattedMessage>
         }
         icon={<SearchIcon />}

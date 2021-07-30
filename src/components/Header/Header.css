@@ -1,9 +1,8 @@
 .header {
     width: 100%;
-    cursor: pointer;
     position: fixed;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     text-align: center;
     text-transform: uppercase;
     background-color: var(--azul-medio);
@@ -13,6 +12,31 @@
     box-shadow: 0px 1px 5px black;
     color: white;
     z-index: 100;
+}
+
+.header span {
+    cursor: pointer;
+    margin-left: 70px;
+}
+
+.flags {
+    margin-right: 70px;
+}
+
+.flags button {
+    border: none;
+    cursor: pointer;
+    background: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: inline-block;
+    width: 50px;
+    margin-left: 10px;
+}
+
+.flags button img {
+    width: 100%;
 }
 
 @media (max-width: 1000px) {
