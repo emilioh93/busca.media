@@ -11,7 +11,7 @@ const Header = () => {
   return (
     <div className="header">
       <div>
-        <span onClick={() => window.scroll(0, 0)}>🎬 Movie Base 🎥</span>
+        <span onClick={() => window.scroll(0, 0)}>🎬 Movie Base</span>
       </div>
       <div className="flags">
         <button

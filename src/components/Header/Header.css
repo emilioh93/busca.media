@@ -44,4 +44,14 @@
         padding-top: 15px;
         font-size: 6.4vw;
     }
+    .header span {
+        margin-left: 5px;
+    }
+    .flags {
+        margin-right: 5px;
+    }
+    .flags button {
+        width: 40px;
+        margin-left: 5px;
+    }
 }
