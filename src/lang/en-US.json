@@ -4,5 +4,7 @@
     "app.search": "Search",
     "app.search.movies": "Search Movies",
     "app.search.series": "Search Series",
-    "app.trailer": "Watch the Trailer"
+    "app.trailer": "Watch the Trailer",
+    "app.error404.txt": "The page you are looking for might have been removed had its name changed or is temporarly unavailable.",
+    "app.error404.button": "Go to Homepage"
 }

@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { Container } from "@material-ui/core";
-import { BrowserRouter, Switch, Route, HashRouter } from "react-router-dom";
+import { Switch, Route, HashRouter } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header/Header";
 import SimpleBottomNavigation from "./components/MainNav";

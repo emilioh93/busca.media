@@ -4,5 +4,7 @@
     "app.search": "Buscar",
     "app.search.movies": "Buscar Películas",
     "app.search.series": "Buscar Series",
-    "app.trailer": "Ver Trailer"
+    "app.trailer": "Ver Trailer",
+    "app.error404.txt": "La página a la que intentas acceder puede haber sido removida, cambiado su nombre o que esté temporalmente deshabilitada.",
+    "app.error404.button": "Volver al Inicio"
 }
