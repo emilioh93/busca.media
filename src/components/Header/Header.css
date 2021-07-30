@@ -3,11 +3,12 @@
     position: fixed;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     text-align: center;
     text-transform: uppercase;
     background-color: var(--azul-medio);
     font-family: "Montserrat", sans-serif;
-    font-size: 5vw;
+    font-size: 4vw;
     padding-bottom: 15px;
     box-shadow: 0px 1px 5px black;
     color: white;
@@ -21,6 +22,9 @@
 
 .flags {
     margin-right: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .flags button {
