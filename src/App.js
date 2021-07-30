@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { Container } from "@material-ui/core";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route, HashRouter } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header/Header";
 import SimpleBottomNavigation from "./components/MainNav";
@@ -17,22 +17,22 @@ function App() {
   console.log({ idioma });
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Header></Header>
       <div className="App">
         <Container>
           <Switch>
-            <Route component={Trending} exact path="/"></Route>
-            <Route component={Movies} exact path="/movies"></Route>
-            <Route component={Series} exact path="/series"></Route>
-            <Route component={Search} exact path="/search"></Route>
-            <Route component={MyList} exact path="/mylist"></Route>
-            <Route component={Error404} path="*"></Route>
+            <Route component={Trending} exact path={"/"}></Route>
+            <Route component={Movies} exact path={"/movies"}></Route>
+            <Route component={Series} exact path={"/series"}></Route>
+            <Route component={Search} exact path={"/search"}></Route>
+            <Route component={MyList} exact path={"/mylist"}></Route>
+            <Route component={Error404}></Route>
           </Switch>
         </Container>
       </div>
       <SimpleBottomNavigation></SimpleBottomNavigation>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 

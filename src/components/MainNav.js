@@ -17,6 +17,7 @@ const useStyles = makeStyles({
     bottom: 0,
     backgroundColor: "var(--azul-oscuro)",
     zIndex: 100,
+    color: "white",
   },
 });
 
@@ -43,6 +44,7 @@ export default function SimpleBottomNavigation() {
       className={classes.root}
     >
       <BottomNavigationAction
+        className="navLinks"
         style={{ color: "white" }}
         label={
           <FormattedMessage
@@ -53,6 +55,7 @@ export default function SimpleBottomNavigation() {
         icon={<WhatshotIcon />}
       />
       <BottomNavigationAction
+        className="navLinks"
         style={{ color: "white" }}
         label={
           <FormattedMessage
@@ -63,11 +66,13 @@ export default function SimpleBottomNavigation() {
         icon={<MovieIcon />}
       />
       <BottomNavigationAction
+        className="navLinks"
         style={{ color: "white" }}
         label="TV Series"
         icon={<TvIcon />}
       />
       <BottomNavigationAction
+        className="navLinks"
         style={{ color: "white" }}
         label={
           <FormattedMessage
