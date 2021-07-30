@@ -2,6 +2,7 @@ import { Badge } from "@material-ui/core";
 import { img_300, unavailable } from "../../config/config";
 import "./SingleContent.css";
 import ContentModal from "../ContentModal/ContentModal";
+import { FormattedMessage } from "react-intl";
 
 const SingleContent = ({
   id,
@@ -24,7 +25,19 @@ const SingleContent = ({
       />
       <b className="title">{title}</b>
       <div className="subtitle">
-        <span>{media_type === "tv" ? "TV Series" : "Movie"}</span>
+        <span>
+          {media_type === "tv" ? (
+            <FormattedMessage
+              id="app.series"
+              defaultMessage="Series"
+            ></FormattedMessage>
+          ) : (
+            <FormattedMessage
+              id="app.movies"
+              defaultMessage="Movies"
+            ></FormattedMessage>
+          )}
+        </span>
         <span>{date}</span>
       </div>
     </ContentModal>
