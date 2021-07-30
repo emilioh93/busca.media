@@ -2,7 +2,7 @@ import { Badge } from "@material-ui/core";
 import { img_300, unavailable } from "../../config/config";
 import "./SingleContent.css";
 import ContentModal from "../ContentModal/ContentModal";
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, FormattedDate } from "react-intl";
 
 const SingleContent = ({
   id,
@@ -38,7 +38,10 @@ const SingleContent = ({
             ></FormattedMessage>
           )}
         </span>
-        <span>{date}</span>
+        {/* <span>{date}</span> */}
+        <span>
+          <FormattedDate value={date}></FormattedDate>
+        </span>
       </div>
     </ContentModal>
   );
