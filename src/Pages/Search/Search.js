@@ -1,17 +1,12 @@
-import {
-  Button,
-  createMuiTheme,
-  Tab,
-  Tabs,
-  TextField,
-  ThemeProvider,
-} from "@material-ui/core";
+import { Button, Tab, Tabs, TextField, ThemeProvider } from "@material-ui/core";
+import { createTheme } from "@material-ui/core/styles";
 import React, { useState } from "react";
 import SearchIcon from "@material-ui/icons/Search";
 import axios from "axios";
 import { useEffect } from "react";
 import SingleContent from "../../components/SingleContent/SingleContent";
 import CustomPagination from "../../components/Pagination/CustomPagination";
+import { FormattedMessage } from "react-intl";
 
 const Search = () => {
   const [type, setType] = useState(0);
@@ -20,7 +15,7 @@ const Search = () => {
   const [content, setContent] = useState();
   const [numOfPages, setNumOfPages] = useState();
 
-  const darkTheme = createMuiTheme({
+  const darkTheme = createTheme({
     palette: {
       type: "dark",
       primary: {
@@ -51,7 +46,12 @@ const Search = () => {
           <TextField
             style={{ flex: 1 }}
             className="searchBox"
-            label="Search"
+            label={
+              <FormattedMessage
+                id="app.search"
+                defaultMessage="Buscar"
+              ></FormattedMessage>
+            }
             variant="filled"
             onChange={(e) => setSearchText(e.target.value)}
           />

@@ -5,6 +5,7 @@ import SingleContent from "../../components/SingleContent/SingleContent";
 import CustomPagination from "../../components/Pagination/CustomPagination";
 import Genres from "../../components/Genres";
 import useGenres from "../../hooks/useGenres";
+import { FormattedMessage } from "react-intl";
 
 const Movies = () => {
   const [page, setPage] = useState(1);
@@ -28,7 +29,12 @@ const Movies = () => {
 
   return (
     <div>
-      <span className="pageTitle">Movies</span>
+      <span className="pageTitle">
+        <FormattedMessage
+          id="app.movies"
+          defaultMessage="Películas"
+        ></FormattedMessage>
+      </span>
       <Genres
         type="movie"
         selectedGenres={selectedGenres}

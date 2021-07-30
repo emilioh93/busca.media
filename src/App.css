@@ -27,6 +27,10 @@
     color: #fff;
 }
 
+.MuiTabs-flexContainer {
+    justify-content: center;
+}
+
 @media (max-width:1000px) {
     .pageTitle {
         font-size: 6.4vw;

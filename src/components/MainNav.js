@@ -8,6 +8,7 @@ import MovieIcon from "@material-ui/icons/Movie";
 import TvIcon from "@material-ui/icons/Tv";
 import SearchIcon from "@material-ui/icons/Search";
 // import PlaylistAddCheckIcon from "@material-ui/icons/PlaylistAddCheck";
+import { FormattedMessage } from "react-intl";
 
 const useStyles = makeStyles({
   root: {
@@ -25,9 +26,9 @@ export default function SimpleBottomNavigation() {
   const history = useHistory();
 
   useEffect(() => {
-    if (value === 0) history.push("/movies");
-    else if (value === 1) history.push("/series");
-    else if (value === 2) history.push("/");
+    if (value === 0) history.push("/");
+    else if (value === 1) history.push("/movies");
+    else if (value === 2) history.push("/series");
     else if (value === 3) history.push("/search");
     else if (value === 4) history.push("/mylist");
   }, [value, history]);
@@ -43,7 +44,22 @@ export default function SimpleBottomNavigation() {
     >
       <BottomNavigationAction
         style={{ color: "white" }}
-        label="Movies"
+        label={
+          <FormattedMessage
+            id="app.trending"
+            defaultMessage="Tendencias"
+          ></FormattedMessage>
+        }
+        icon={<WhatshotIcon />}
+      />
+      <BottomNavigationAction
+        style={{ color: "white" }}
+        label={
+          <FormattedMessage
+            id="app.movies"
+            defaultMessage="Películas"
+          ></FormattedMessage>
+        }
         icon={<MovieIcon />}
       />
       <BottomNavigationAction
@@ -53,12 +69,12 @@ export default function SimpleBottomNavigation() {
       />
       <BottomNavigationAction
         style={{ color: "white" }}
-        label="Trending"
-        icon={<WhatshotIcon />}
-      />
-      <BottomNavigationAction
-        style={{ color: "white" }}
-        label="Search"
+        label={
+          <FormattedMessage
+            id="app.search"
+            defaultMessage="Buscar"
+          ></FormattedMessage>
+        }
         icon={<SearchIcon />}
       />
       {/* TODO: habilitar botón my list */}

@@ -3,6 +3,7 @@ import axios from "axios";
 import SingleContent from "../../components/SingleContent/SingleContent";
 import "./Trending.css";
 import CustomPagination from "../../components/Pagination/CustomPagination";
+import { FormattedMessage } from "react-intl";
 
 const Trending = () => {
   const [page, setPage] = useState(1);
@@ -12,7 +13,6 @@ const Trending = () => {
     const { data } = await axios.get(
       `https://api.themoviedb.org/3/trending/all/day?api_key=${process.env.REACT_APP_API_KEY}&page=${page}`
     );
-    console.log(data);
     setContent(data.results);
   };
 
@@ -23,7 +23,14 @@ const Trending = () => {
 
   return (
     <div>
-      <span className="pageTitle">Trending</span>
+      <span className="pageTitle">
+        {
+          <FormattedMessage
+            id="app.trending"
+            defaultMessage="Tendencias"
+          ></FormattedMessage>
+        }
+      </span>
       <div className="trending">
         {content &&
           content.map((c) => (
