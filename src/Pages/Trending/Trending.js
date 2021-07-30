@@ -8,10 +8,11 @@ import { FormattedMessage } from "react-intl";
 const Trending = () => {
   const [page, setPage] = useState(1);
   const [content, setContent] = useState([]);
+  const lang = localStorage.getItem("lang");
 
   const fetchTrending = async () => {
     const { data } = await axios.get(
-      `https://api.themoviedb.org/3/trending/all/day?api_key=${process.env.REACT_APP_API_KEY}&page=${page}`
+      `https://api.themoviedb.org/3/trending/all/day?api_key=${process.env.REACT_APP_API_KEY}&language=${lang}&page=${page}`
     );
     setContent(data.results);
   };
@@ -19,7 +20,7 @@ const Trending = () => {
   useEffect(() => {
     fetchTrending();
     // eslint-disable-next-line
-  }, [page]);
+  }, [lang, page]);
 
   return (
     <div>
