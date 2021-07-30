@@ -9,9 +9,6 @@ import Movies from "./Pages/Movies/Movies";
 import Series from "./Pages/Series/Series";
 import Search from "./Pages/Search/Search";
 import MyList from "./Pages/MyList/MyList";
-import { IntlProvider } from "react-intl";
-import Spanish from "./lang/es-ES.json";
-import English from "./lang/en-US.json";
 import { langContext } from "./context/langContext";
 
 function App() {
