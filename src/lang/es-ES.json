@@ -1,5 +1,8 @@
 {
     "app.movies": "Películas",
     "app.trending": "Tendencias",
-    "app.search": "Buscar"
+    "app.search": "Buscar",
+    "app.search.movies": "Buscar Películas",
+    "app.search.series": "Buscar Series",
+    "app.trailer": "Ver Trailer"
 }

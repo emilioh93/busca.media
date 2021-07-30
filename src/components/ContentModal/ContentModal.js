@@ -13,6 +13,7 @@ import "./ContentModal.css";
 import { Button } from "@material-ui/core";
 import YouTubeIcon from "@material-ui/icons/YouTube";
 import Carousel from "../Carousel/Carousel";
+import { FormattedMessage } from "react-intl";
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -37,6 +38,7 @@ export default function TransitionsModal({ children, media_type, id }) {
   const [open, setOpen] = useState(false);
   const [content, setContent] = useState();
   const [video, setVideo] = useState();
+  const lang = localStorage.getItem("lang");
 
   const handleOpen = () => {
     setOpen(true);
@@ -48,7 +50,7 @@ export default function TransitionsModal({ children, media_type, id }) {
 
   const fetchData = async () => {
     const { data } = await axios.get(
-      `https://api.themoviedb.org/3/${media_type}/${id}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
+      `https://api.themoviedb.org/3/${media_type}/${id}?api_key=${process.env.REACT_APP_API_KEY}&language=${lang}`
     );
 
     setContent(data);
@@ -56,7 +58,7 @@ export default function TransitionsModal({ children, media_type, id }) {
 
   const fetchVideo = async () => {
     const { data } = await axios.get(
-      `https://api.themoviedb.org/3/${media_type}/${id}/videos?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
+      `https://api.themoviedb.org/3/${media_type}/${id}/videos?api_key=${process.env.REACT_APP_API_KEY}&language=${lang}`
     );
 
     setVideo(data.results[0]?.key);
@@ -66,7 +68,7 @@ export default function TransitionsModal({ children, media_type, id }) {
     fetchData();
     fetchVideo();
     // eslint-disable-next-line
-  }, []);
+  }, [lang]);
 
   return (
     <>
@@ -142,7 +144,10 @@ export default function TransitionsModal({ children, media_type, id }) {
                     target="__blank"
                     href={`https://www.youtube.com/watch?v=${video}`}
                   >
-                    Watch the Trailer
+                    <FormattedMessage
+                      id="app.trailer"
+                      defaultMessage="Watch the Trailer"
+                    ></FormattedMessage>
                   </Button>
                 </div>
               </div>

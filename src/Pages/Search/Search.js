@@ -14,6 +14,7 @@ const Search = () => {
   const [searchText, setSearchText] = useState("");
   const [content, setContent] = useState();
   const [numOfPages, setNumOfPages] = useState();
+  const lang = localStorage.getItem("lang");
 
   const darkTheme = createTheme({
     palette: {
@@ -28,7 +29,7 @@ const Search = () => {
     const { data } = await axios.get(`
       https://api.themoviedb.org/3/search/${type ? "tv" : "movie"}?api_key=${
       process.env.REACT_APP_API_KEY
-    }&language=en-US&query=${searchText}&page=${page}&include_adult=false`);
+    }&language=${lang}&query=${searchText}&page=${page}&include_adult=false`);
     setContent(data.results);
     setNumOfPages(data.total_pages);
   };
@@ -37,7 +38,7 @@ const Search = () => {
     window.scroll(0, 0);
     fetchSearch();
     // eslint-disable-next-line
-  }, [type, page]);
+  }, [lang, type, page]);
 
   return (
     <div>
@@ -73,8 +74,24 @@ const Search = () => {
           }}
           style={{ paddingBottom: 5 }}
         >
-          <Tab style={{ width: "50%" }} label="Search Movies" />
-          <Tab style={{ width: "50%" }} label="Search TV Series" />
+          <Tab
+            style={{ width: "50%" }}
+            label={
+              <FormattedMessage
+                id="app.search.movies"
+                defaultMessage="Search Movies"
+              ></FormattedMessage>
+            }
+          />
+          <Tab
+            style={{ width: "50%" }}
+            label={
+              <FormattedMessage
+                id="app.search.series"
+                defaultMessage="Search Series"
+              ></FormattedMessage>
+            }
+          />
         </Tabs>
       </ThemeProvider>
       <div className="trending">

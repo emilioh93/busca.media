@@ -1,5 +1,8 @@
 {
     "app.movies": "Movies",
     "app.trending": "Trending",
-    "app.search": "Search"
+    "app.search": "Search",
+    "app.search.movies": "Search Movies",
+    "app.search.series": "Search Series",
+    "app.trailer": "Watch the Trailer"
 }

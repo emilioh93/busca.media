@@ -14,10 +14,11 @@ const Movies = () => {
   const [selectedGenres, setSelectedGenres] = useState([]);
   const [genres, setGenres] = useState([]);
   const genreforURL = useGenres(selectedGenres);
+  const lang = localStorage.getItem("lang");
 
   const fetchMovies = async () => {
     const { data } = await axios.get(`
-    https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}&with_genres=${genreforURL}`);
+    https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&language=${lang}&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}&with_genres=${genreforURL}`);
     setContent(data.results);
     setNumOfPages(data.total_pages);
   };
@@ -25,7 +26,7 @@ const Movies = () => {
   useEffect(() => {
     fetchMovies();
     // eslint-disable-next-line
-  }, [page, genreforURL]);
+  }, [lang, page, genreforURL]);
 
   return (
     <div>

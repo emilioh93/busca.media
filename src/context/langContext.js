@@ -11,6 +11,8 @@ const LangProvider = ({ children }) => {
 
   const lang = localStorage.getItem("lang");
 
+  console.log({lang});
+
   if (lang) {
     localePorDefecto = lang;
 
