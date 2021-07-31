@@ -15,6 +15,7 @@ import YouTubeIcon from "@material-ui/icons/YouTube";
 import Carousel from "../Carousel/Carousel";
 import PlaylistAddIcon from "@material-ui/icons/PlaylistAdd";
 import { FormattedMessage } from "react-intl";
+// import Swal from "sweetalert2";
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -40,6 +41,7 @@ export default function TransitionsModal({ children, media_type, id }) {
   const [content, setContent] = useState();
   const [video, setVideo] = useState();
   const lang = localStorage.getItem("lang");
+  const [myList, setMyList] = useState([]);
 
   const handleOpen = () => {
     setOpen(true);
@@ -66,10 +68,29 @@ export default function TransitionsModal({ children, media_type, id }) {
   };
 
   useEffect(() => {
+    const contentMyList = JSON.parse(localStorage.getItem("add-my-list"));
+    if (contentMyList) {
+      setMyList(contentMyList);
+    }
+  }, []);
+
+  const saveLS = (items) => {
+    localStorage.setItem("add-my-list", JSON.stringify(items));
+  };
+
+  const addToMyList = (content) => {
+    const newMyListArray = [...myList, content];
+    setMyList(newMyListArray);
+    saveLS(newMyListArray);
+  };
+
+  useEffect(() => {
     fetchData();
     fetchVideo();
     // eslint-disable-next-line
   }, [lang]);
+
+  console.log("myList", myList);
 
   return (
     <>
@@ -167,7 +188,10 @@ export default function TransitionsModal({ children, media_type, id }) {
                       startIcon={<PlaylistAddIcon />}
                       color="secondary"
                       target="__blank"
-                      href={`https://www.youtube.com/watch?v=${video}`}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        addToMyList(content);
+                      }}
                     >
                       Agregar a Mi Lista
                     </Button>

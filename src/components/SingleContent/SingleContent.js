@@ -11,6 +11,7 @@ const SingleContent = ({
   date,
   media_type,
   vote_average,
+  objeto
 }) => {
   return (
     <ContentModal media_type={media_type} id={id}>
@@ -24,7 +25,7 @@ const SingleContent = ({
         alt={title}
       />
       <b className="title">{title}</b>
-      <button className="myList_button">+ Mi Lista</button>
+      {/* <button className="myList_button" onClick={addToMyList}>+ Mi Lista</button> */}
       <div className="subtitle">
         <span>
           {media_type === "tv" ? (
