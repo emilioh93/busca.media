@@ -20,21 +20,43 @@
     font-weight: bold;
 }
 
-@media (max-width:550px) {
-    .media {
-        width: 46%;
-    }
-}
-
 .poster {
     border-radius: 10px;
+    height: 300px;
 }
 
 .title {
     width: 100%;
+    height: 40px;
     text-align: center;
     font-size: 17px;
     padding: 8px 0;
+}
+
+.myList_button {
+    width: 100%;
+    margin: 10px 0px;
+    box-shadow: inset 0px 39px 0px -24px #ff5e42;
+    background-color: var(--naranja);
+    border-radius: 4px;
+    border: 1px solid var(--naranja);
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 15px;
+    padding: 6px 15px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #ff4d29;
+}
+
+.myList_button:hover {
+    background-color: #f74940;
+}
+
+.myList_button:active {
+    position: relative;
+    top: 1px;
 }
 
 .subtitle {
@@ -43,4 +65,10 @@
     padding-bottom: 3px;
     padding: 0 2px;
     margin-top: auto;
+}
+
+@media (max-width:550px) {
+    .media {
+        width: 46%;
+    }
 }

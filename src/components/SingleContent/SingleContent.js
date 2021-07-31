@@ -24,6 +24,7 @@ const SingleContent = ({
         alt={title}
       />
       <b className="title">{title}</b>
+      <button className="myList_button">+ Mi Lista</button>
       <div className="subtitle">
         <span>
           {media_type === "tv" ? (
@@ -38,7 +39,6 @@ const SingleContent = ({
             ></FormattedMessage>
           )}
         </span>
-        {/* <span>{date}</span> */}
         <span>
           <FormattedDate year="numeric" value={date}></FormattedDate>
         </span>

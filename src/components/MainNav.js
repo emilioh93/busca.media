@@ -82,12 +82,6 @@ export default function SimpleBottomNavigation() {
         }
         icon={<SearchIcon />}
       />
-      {/* TODO: habilitar botón my list */}
-      {/* <BottomNavigationAction
-        style={{ color: "white" }}
-        label="MyList"
-        icon={<PlaylistAddCheckIcon />}
-      /> */}
     </BottomNavigation>
   );
 }
