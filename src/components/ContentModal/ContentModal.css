@@ -63,6 +63,15 @@
     display: none;
 }
 
+.ContentModal_bottons {
+    flex-direction: column;
+}
+
+.ContentModal_bottons .MuiButton-containedSecondary {
+    margin-bottom: 10px;
+    width: 100%!important;
+}
+
 @media (min-width:835px) {
     .ContentModal_landscape {
         display: none;

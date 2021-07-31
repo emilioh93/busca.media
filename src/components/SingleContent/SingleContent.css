@@ -16,6 +16,11 @@
     color: black;
 }
 
+.media:hover .myList_button {
+    box-shadow: inset 0px 39px 0px -24px var(--azul-claro);
+    background-color: var(--azul-medio);
+}
+
 .media:hover .subtitle {
     font-weight: bold;
 }
@@ -47,11 +52,11 @@
     font-size: 15px;
     padding: 6px 15px;
     text-decoration: none;
-    text-shadow: 0px 1px 0px #ff4d29;
 }
 
 .myList_button:hover {
-    background-color: #f74940;
+    box-shadow: inset 0px 39px 0px -24px var(--azul-medio)!important;
+    background-color: var(--azul-oscuro)!important;
 }
 
 .myList_button:active {
@@ -70,5 +75,17 @@
 @media (max-width:550px) {
     .media {
         width: 46%;
+    }
+    .poster {
+        height: 250px;
+    }
+    .title {
+        font-size: 16px;
+    }
+    .myList_button {
+        font-size: smaller;
+    }
+    .subtitle {
+        font-size: 14px;
     }
 }

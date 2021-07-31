@@ -13,6 +13,7 @@ import "./ContentModal.css";
 import { Button } from "@material-ui/core";
 import YouTubeIcon from "@material-ui/icons/YouTube";
 import Carousel from "../Carousel/Carousel";
+import PlaylistAddIcon from "@material-ui/icons/PlaylistAdd";
 import { FormattedMessage } from "react-intl";
 
 const useStyles = makeStyles((theme) => ({
@@ -135,20 +136,42 @@ export default function TransitionsModal({ children, media_type, id }) {
                   <div>
                     <Carousel id={id} media_type={media_type} />
                   </div>
-
-                  <Button
-                    style={{ backgroundColor: "var(--naranja)" }}
-                    variant="contained"
-                    startIcon={<YouTubeIcon />}
-                    color="secondary"
-                    target="__blank"
-                    href={`https://www.youtube.com/watch?v=${video}`}
+                  <div
+                    className="ContentModal_bottons"
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "space-around",
+                    }}
                   >
-                    <FormattedMessage
-                      id="app.trailer"
-                      defaultMessage="Watch the Trailer"
-                    ></FormattedMessage>
-                  </Button>
+                    <Button
+                      style={{
+                        backgroundColor: "var(--naranja)",
+                      }}
+                      variant="contained"
+                      startIcon={<YouTubeIcon />}
+                      color="secondary"
+                      target="__blank"
+                      href={`https://www.youtube.com/watch?v=${video}`}
+                    >
+                      <FormattedMessage
+                        id="app.trailer"
+                        defaultMessage="Watch the Trailer"
+                      ></FormattedMessage>
+                    </Button>
+                    <Button
+                      style={{
+                        backgroundColor: "var(--naranja)",
+                      }}
+                      variant="contained"
+                      startIcon={<PlaylistAddIcon />}
+                      color="secondary"
+                      target="__blank"
+                      href={`https://www.youtube.com/watch?v=${video}`}
+                    >
+                      Agregar a Mi Lista
+                    </Button>
+                  </div>
                 </div>
               </div>
             </div>

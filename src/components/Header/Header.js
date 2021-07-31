@@ -16,7 +16,7 @@ const Header = () => {
         <span onClick={() => window.scroll(0, 0)}>🎬 Movie Base</span>
       </div>
       <div style={{ display: "flex", alignItems: "center" }}>
-        <button className="myList_button" onClick={() => history.push("./mylist")}>Mi Lista</button>
+        <button className="myList_link" onClick={() => history.push("./mylist")}>Mi Lista</button>
         <div>|</div>
         <div className="flags">
           <button

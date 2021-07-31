@@ -20,7 +20,7 @@
     margin-left: 70px;
 }
 
-.myList_button {
+.myList_link {
     background: transparent;
     color: white;
     border: none;
@@ -60,7 +60,7 @@
     .header span {
         margin-left: 5px;
     }
-    .myList_button {
+    .myList_link {
         font-size: 14px;
     }
     .flags {
