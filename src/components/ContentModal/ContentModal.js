@@ -45,6 +45,9 @@ export default function TransitionsModal({ children, media_type, id }) {
   const lang = localStorage.getItem("lang");
   const { myList } = useContext(MyListContext);
   const { setMyList } = useContext(MyListContext);
+  const found = myList.find((item) => {
+    return item.id === id;
+  });
 
   const handleOpen = () => {
     setOpen(true);
@@ -84,6 +87,33 @@ export default function TransitionsModal({ children, media_type, id }) {
     const newMyListArray = [...myList, content];
     setMyList(newMyListArray);
     saveLS(newMyListArray);
+  };
+
+  const deleteFromMyList = (content) => {
+    handleClose();
+    Swal.fire({
+      title: "¿Seguro que desea eliminar?",
+      text: "Está seguro que desea eliminarla de su lista de favoritos.",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Eliminar",
+      cancelButtonText: "Cancelar",
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        const newMyListArray = myList.filter(
+          (myList) => myList.id !== content.id
+        );
+        setMyList(newMyListArray);
+        saveLS(newMyListArray);
+        Swal.fire(
+          "Película eliminada!",
+          "La película fue eliminada de su lista de favoritos.",
+          "success"
+        );
+      }
+    });
   };
 
   useEffect(() => {
@@ -180,21 +210,39 @@ export default function TransitionsModal({ children, media_type, id }) {
                         defaultMessage="Watch the Trailer"
                       ></FormattedMessage>
                     </Button>
-                    <Button
-                      style={{
-                        backgroundColor: "var(--naranja)",
-                      }}
-                      variant="contained"
-                      startIcon={<PlaylistAddIcon />}
-                      color="secondary"
-                      target="__blank"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        addToMyList(content);
-                      }}
-                    >
-                      Agregar a Mi Lista
-                    </Button>
+                    {found ? (
+                      <Button
+                        style={{
+                          backgroundColor: "var(--naranja)",
+                        }}
+                        variant="contained"
+                        startIcon={<PlaylistAddIcon />}
+                        color="secondary"
+                        target="__blank"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          deleteFromMyList(content);
+                        }}
+                      >
+                        Eliminar de Mi Lista
+                      </Button>
+                    ) : (
+                      <Button
+                        style={{
+                          backgroundColor: "var(--naranja)",
+                        }}
+                        variant="contained"
+                        startIcon={<PlaylistAddIcon />}
+                        color="secondary"
+                        target="__blank"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          addToMyList(content);
+                        }}
+                      >
+                        Agregar a Mi Lista
+                      </Button>
+                    )}
                   </div>
                 </div>
               </div>
