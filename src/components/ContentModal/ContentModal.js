@@ -15,7 +15,9 @@ import YouTubeIcon from "@material-ui/icons/YouTube";
 import Carousel from "../Carousel/Carousel";
 import PlaylistAddIcon from "@material-ui/icons/PlaylistAdd";
 import { FormattedMessage } from "react-intl";
-// import Swal from "sweetalert2";
+import { useContext } from "react";
+import { MyListContext } from "../../context/MyListContext";
+import Swal from "sweetalert2";
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -41,7 +43,8 @@ export default function TransitionsModal({ children, media_type, id }) {
   const [content, setContent] = useState();
   const [video, setVideo] = useState();
   const lang = localStorage.getItem("lang");
-  const [myList, setMyList] = useState([]);
+  const { myList } = useContext(MyListContext);
+  const { setMyList } = useContext(MyListContext);
 
   const handleOpen = () => {
     setOpen(true);
@@ -67,18 +70,17 @@ export default function TransitionsModal({ children, media_type, id }) {
     setVideo(data.results[0]?.key);
   };
 
-  useEffect(() => {
-    const contentMyList = JSON.parse(localStorage.getItem("add-my-list"));
-    if (contentMyList) {
-      setMyList(contentMyList);
-    }
-  }, []);
-
   const saveLS = (items) => {
     localStorage.setItem("add-my-list", JSON.stringify(items));
   };
 
   const addToMyList = (content) => {
+    handleClose();
+    Swal.fire(
+      "Agregada a Mi Lista",
+      "La película o serie que seleccionó, se agregó correctamente",
+      "success"
+    );
     const newMyListArray = [...myList, content];
     setMyList(newMyListArray);
     saveLS(newMyListArray);
@@ -88,9 +90,7 @@ export default function TransitionsModal({ children, media_type, id }) {
     fetchData();
     fetchVideo();
     // eslint-disable-next-line
-  }, [lang]);
-
-  console.log("myList", myList);
+  }, [myList, lang]);
 
   return (
     <>

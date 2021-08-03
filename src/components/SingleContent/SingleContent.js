@@ -11,7 +11,6 @@ const SingleContent = ({
   date,
   media_type,
   vote_average,
-  objeto
 }) => {
   return (
     <ContentModal media_type={media_type} id={id}>

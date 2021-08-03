@@ -1,20 +1,22 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
+import { MyListContext } from "../../context/MyListContext";
+import SingleContent from "../../components/SingleContent/SingleContent";
 
 const MyList = () => {
+  const { myList } = useContext(MyListContext);
+  const { setMyList } = useContext(MyListContext);
+
+  useEffect(() => {
+    const contentMyList = JSON.parse(localStorage.getItem("add-my-list"));
+    if (contentMyList) setMyList(contentMyList);
+  }, []);
+
   return (
     <div>
       <span className="pageTitle">My List</span>
-      {/* <Genres
-        type="movie"
-        selectedGenres={selectedGenres}
-        setSelectedGenres={setSelectedGenres}
-        genres={genres}
-        setGenres={setGenres}
-        setPage={setPage}
-      ></Genres>
       <div className="trending">
-        {content &&
-          content.map((c) => (
+        {myList &&
+          myList.map((c) => (
             <SingleContent
               key={c.id}
               id={c.id}
@@ -26,12 +28,6 @@ const MyList = () => {
             ></SingleContent>
           ))}
       </div>
-      {numOfPages > 1 && (
-        <CustomPagination
-          setPage={setPage}
-          numOfPages={numOfPages}
-        ></CustomPagination>
-      )} */}
     </div>
   );
 };

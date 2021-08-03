@@ -4,10 +4,13 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { LangProvider } from "./context/langContext";
+import MyListProvider from "./context/MyListContext";
 
 ReactDOM.render(
   <LangProvider>
-    <App />
+    <MyListProvider>
+      <App />
+    </MyListProvider>
   </LangProvider>,
   document.getElementById("root")
 );
