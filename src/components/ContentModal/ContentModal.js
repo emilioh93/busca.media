@@ -14,6 +14,7 @@ import { Button } from "@material-ui/core";
 import YouTubeIcon from "@material-ui/icons/YouTube";
 import Carousel from "../Carousel/Carousel";
 import PlaylistAddIcon from "@material-ui/icons/PlaylistAdd";
+import DeleteIcon from "@material-ui/icons/Delete";
 import { FormattedMessage } from "react-intl";
 import { useContext } from "react";
 import { MyListContext } from "../../context/MyListContext";
@@ -80,8 +81,8 @@ export default function TransitionsModal({ children, media_type, id }) {
   const addToMyList = (content) => {
     handleClose();
     Swal.fire(
-      "Agregada a Mi Lista",
-      "La película o serie que seleccionó, se agregó correctamente",
+      "Added to My List",
+      "The movie or series you selected was added successfully.",
       "success"
     );
     const newMyListArray = [...myList, content];
@@ -92,14 +93,14 @@ export default function TransitionsModal({ children, media_type, id }) {
   const deleteFromMyList = (content) => {
     handleClose();
     Swal.fire({
-      title: "¿Seguro que desea eliminar?",
-      text: "Está seguro que desea eliminarla de su lista de favoritos.",
+      title: "Are you sure you want to delete?",
+      text: "Are you sure you want to remove it from your list?",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Eliminar",
-      cancelButtonText: "Cancelar",
+      confirmButtonText: "Remove",
+      cancelButtonText: "Cancel",
     }).then(async (result) => {
       if (result.isConfirmed) {
         const newMyListArray = myList.filter(
@@ -108,8 +109,8 @@ export default function TransitionsModal({ children, media_type, id }) {
         setMyList(newMyListArray);
         saveLS(newMyListArray);
         Swal.fire(
-          "Película eliminada!",
-          "La película fue eliminada de su lista de favoritos.",
+          "Movie deleted!",
+          "The movie was removed from your list.",
           "success"
         );
       }
@@ -213,10 +214,10 @@ export default function TransitionsModal({ children, media_type, id }) {
                     {found ? (
                       <Button
                         style={{
-                          backgroundColor: "var(--naranja)",
+                          backgroundColor: "red",
                         }}
                         variant="contained"
-                        startIcon={<PlaylistAddIcon />}
+                        startIcon={<DeleteIcon />}
                         color="secondary"
                         target="__blank"
                         onClick={(e) => {
@@ -224,12 +225,15 @@ export default function TransitionsModal({ children, media_type, id }) {
                           deleteFromMyList(content);
                         }}
                       >
-                        Eliminar de Mi Lista
+                        <FormattedMessage
+                          id="app.myList.remove"
+                          defaultMessage="Remove from My List"
+                        />
                       </Button>
                     ) : (
                       <Button
                         style={{
-                          backgroundColor: "var(--naranja)",
+                          backgroundColor: "green",
                         }}
                         variant="contained"
                         startIcon={<PlaylistAddIcon />}
@@ -240,7 +244,10 @@ export default function TransitionsModal({ children, media_type, id }) {
                           addToMyList(content);
                         }}
                       >
-                        Agregar a Mi Lista
+                        <FormattedMessage
+                          id="app.myList.add"
+                          defaultMessage="Add to My List"
+                        />
                       </Button>
                     )}
                   </div>

@@ -1,5 +1,9 @@
 {
+    "app.myList": "My List",
+    "app.myList.add": "Add to My List",
+    "app.myList.remove": "Remove from My List",
     "app.movies": "Movies",
+    "app.series": "TV Series",
     "app.trending": "Trending",
     "app.search": "Search",
     "app.search.movies": "Search Movies",

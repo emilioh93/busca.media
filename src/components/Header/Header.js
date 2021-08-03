@@ -4,6 +4,7 @@ import en from "../../img/flags/uk.png";
 import { useContext } from "react";
 import { langContext } from "../../context/langContext";
 import { useHistory } from "react-router-dom";
+import { FormattedMessage } from "react-intl";
 
 const Header = () => {
   const idioma = useContext(langContext);
@@ -16,7 +17,12 @@ const Header = () => {
         <span onClick={() => window.scroll(0, 0)}>🎬 Movie Base</span>
       </div>
       <div style={{ display: "flex", alignItems: "center" }}>
-        <button className="myList_link" onClick={() => history.push("./mylist")}>Mi Lista</button>
+        <button
+          className="myList_link"
+          onClick={() => history.push("./mylist")}
+        >
+          <FormattedMessage id="app.myList" defaultMessage="My List" />
+        </button>
         <div>|</div>
         <div className="flags">
           <button

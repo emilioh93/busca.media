@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { MyListContext } from "../../context/MyListContext";
 import SingleContent from "../../components/SingleContent/SingleContent";
+import { FormattedMessage } from "react-intl";
 
 const MyList = () => {
   const { myList } = useContext(MyListContext);
@@ -13,7 +14,9 @@ const MyList = () => {
 
   return (
     <div>
-      <span className="pageTitle">My List</span>
+      <span className="pageTitle">
+        <FormattedMessage id="app.myList" defaultMessage="My List" />
+      </span>
       <div className="trending">
         {myList &&
           myList.map((c) => (
