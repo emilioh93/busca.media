@@ -48,7 +48,6 @@
     display: inline-block;
     cursor: pointer;
     color: #ffffff;
-    font-family: Arial;
     font-size: 15px;
     padding: 6px 15px;
     text-decoration: none;
@@ -67,8 +66,7 @@
 .subtitle {
     display: flex;
     justify-content: space-between;
-    padding-bottom: 3px;
-    padding: 0 2px;
+    padding: 0 2px 3px 2px;
     margin-top: auto;
 }
 
