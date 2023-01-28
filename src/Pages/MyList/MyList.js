@@ -10,6 +10,7 @@ const MyList = () => {
   useEffect(() => {
     const contentMyList = JSON.parse(localStorage.getItem("add-my-list"));
     if (contentMyList) setMyList(contentMyList);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
