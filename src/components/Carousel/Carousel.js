@@ -1,25 +1,25 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-import AliceCarousel from "react-alice-carousel";
-import "react-alice-carousel/lib/alice-carousel.css";
-import { img_300, noPicture } from "../../config/config";
-import "./Carousel.css";
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import AliceCarousel from 'react-alice-carousel';
+import 'react-alice-carousel/lib/alice-carousel.css';
+import { img_300, noPicture } from '../../config/config';
+import './Carousel.css';
 
-const handleDragStart = (e) => e.preventDefault();
+const handleDragStart = e => e.preventDefault();
 
 const Carousel = ({ media_type, id }) => {
   const [credits, setCredits] = useState([]);
 
-  const items = credits.map((c) => {
+  const items = credits.map(c => {
     return (
-      <div className="carouselItem">
+      <div className='carouselItem' key={c.id}>
         <img
           src={c.profile_path ? `${img_300}/${c.profile_path}` : noPicture}
           alt={c?.name}
           onDragStart={handleDragStart}
-          className="carouselItem__img"
+          className='carouselItem__img'
         />
-        <b className="carouselItem__txt">{c?.name}</b>
+        <b className='carouselItem__txt'>{c?.name}</b>
       </div>
     );
   });

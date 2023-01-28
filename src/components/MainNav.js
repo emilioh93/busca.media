@@ -7,7 +7,6 @@ import WhatshotIcon from "@material-ui/icons/Whatshot";
 import MovieIcon from "@material-ui/icons/Movie";
 import TvIcon from "@material-ui/icons/Tv";
 import SearchIcon from "@material-ui/icons/Search";
-// import PlaylistAddCheckIcon from "@material-ui/icons/PlaylistAddCheck";
 import { FormattedMessage } from "react-intl";
 
 const useStyles = makeStyles({
